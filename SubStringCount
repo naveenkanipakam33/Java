@@ -1,0 +1,45 @@
+/*
+Enter String
+hi Hello hiHello hi
+Enter SubString
+hi
+No of repetitions of Sub String : 3
+*/
+
+
+
+import java.util.Scanner;
+
+public class SubstringCount {
+    static  int countSub(String s,String sub){
+
+        int siz=sub.length();
+        int count=0;
+
+        for(int i=0;i<=s.length()-siz;i++){
+            String substring="";
+            for (int j=i;j<siz+i;j++){
+
+                substring=substring+s.charAt(j);
+            }
+
+            if(sub.equals(substring)){
+                count++;
+            }
+
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter String");
+        String s=sc.nextLine();
+        System.out.println("Enter SubString");
+        String sub=sc.next();
+
+        int res=countSub(s,sub);
+        System.out.println("No of repetitions of Sub String : "+res);
+
+
+    }
+}
